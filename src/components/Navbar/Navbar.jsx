@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
-import SearchBar from "./Searchbar";
+import Searchbar from "./Searchbar";
 import { logo } from "../../utils/constants";
 
 const Navbar = () => (
@@ -22,7 +22,7 @@ const Navbar = () => (
 				height={45}
 			/>
 		</Link>
-		<SearchBar />
+		<Searchbar />
 	</Stack>
 );
 
