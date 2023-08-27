@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
-const SearchBar = () => {
+const Searchbar = () => {
 	const [inputValue, setInputValue] = useState("");
 
 	return (
@@ -39,4 +39,4 @@ const SearchBar = () => {
 	);
 };
 
-export default SearchBar;
+export default Searchbar;
