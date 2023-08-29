@@ -2,7 +2,7 @@ import React from "react";
 import { Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import Searchbar from "./Searchbar";
-import { logo } from "../../utils/constants";
+import { logo } from "../utils/constants";
 
 const Navbar = () => (
 	<Stack

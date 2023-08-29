@@ -16,7 +16,6 @@ const options = {
 const videoSearchData = async (url) => {
   try {
     const { data } = await axios.get(`${BASE_URL}/${url}`, options);
-    console.log(data);
     return data;
   } catch (error) {
     console.error(error);

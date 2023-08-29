@@ -2,13 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import Sidebar from "./Sidebar";
 import Videos from "./Videos";
-import videoSearchData from "../../utils/fetch";
+import videoSearchData from "../utils/fetch";
 
 const Feed = () => {
 	const [selectedCategory, setSelectedCategory] = useState("New");
+	const [videos, setVideos] = useState([]);
 
 	useEffect(() => {
-		videoSearchData(`search?part=snippet&q=${selectedCategory}`);
+		videoSearchData(`search?part=snippet&q=${selectedCategory}`).then(
+			(data) => {
+				const videoItems = data.items;
+				setVideos(videoItems);
+			},
+		);
 	}, [selectedCategory]);
 
 	return (
@@ -45,7 +51,7 @@ const Feed = () => {
 				>
 					{selectedCategory} <span style={{ color: "#F31503" }}>Videos</span>
 				</Typography>
-				<Videos videos={[]} />
+				<Videos videos={videos} />
 			</Box>
 		</Stack>
 	);
