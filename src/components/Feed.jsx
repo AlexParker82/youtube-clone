@@ -9,12 +9,13 @@ const Feed = () => {
 	const [videos, setVideos] = useState([]);
 
 	useEffect(() => {
-		videoSearchData(`search?part=snippet&q=${selectedCategory}`).then(
-			(data) => {
-				const videoItems = data.items;
-				setVideos(videoItems);
-			},
-		);
+		(async () => {
+			const videoData = await videoSearchData(
+				`search?part=snippet&q=${selectedCategory}`,
+			);
+			const videoItems = videoData.items;
+			setVideos(videoItems);
+		})();
 	}, [selectedCategory]);
 
 	return (

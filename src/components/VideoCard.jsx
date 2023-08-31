@@ -6,7 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import { Typography } from "@mui/material";
 
 const VideoCard = ({ videoData }) => {
-	console.log(videoData);
 	return (
 		<Card sx={{ maxWidth: 500 }}>
 			<CardHeader
